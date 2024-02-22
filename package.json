@@ -1,0 +1,44 @@
+{
+  "name": "stripe-connect-backend",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahsanayaz/stripe-connect-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ahsanayaz/stripe-connect-backend.git/issues"
+  },
+  "author": {
+    "name": "Muhammad Ahsan Ayaz",
+    "email": "ahsan.ubitian@gmail.com"
+  },
+  "keywords": [
+    "react",
+    "flutter",
+    "stripe",
+    "flutter stripe",
+    "stripe connect",
+    "stripe payments",
+    "payments",
+    "javacript",
+    "nextjs"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.6.0",
+    "next": "^14.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-toastify": "^7.0.4",
+    "stripe": "^8.145.0"
+  },
+  "devDependencies": {
+    "@babel/helper-compilation-targets": "^7.23.6"
+  }
+}
