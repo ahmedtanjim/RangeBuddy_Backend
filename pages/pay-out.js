@@ -35,18 +35,18 @@ export default function Customer() {
   const products = [
     {
       id: 191,
-      amount: 149.95,
+      amount: 2.99,
       image:
-        "https://www.beatsbydre.com/content/dam/beats/web/pdp/beats-x/color_selector/_0003_rgb_MLYE2-RGB-thrqtr-detail_V2.png",
-      title: "Beats X",
-      currency: "eur",
+        "https://play-lh.googleusercontent.com/4sstA3xYHQYI1jziWDVJ-Lf00Lk1wbdmXv_EMVUlo7eZfwtg3ogGK4mSs0fYlE3Vr2Y",
+      title: "Range Buddy - Monthly Subscription",
+      currency: "usd",
     },
     {
       id: 193,
-      amount: 340,
-      image: "/arctis-pro-wireless.png",
-      title: "Arctis Pro Wireless",
-      currency: "eur",
+      amount: 14.99,
+      image: "https://play-lh.googleusercontent.com/4sstA3xYHQYI1jziWDVJ-Lf00Lk1wbdmXv_EMVUlo7eZfwtg3ogGK4mSs0fYlE3Vr2Y",
+      title: "Range Buddy - Yearly Subscription",
+      currency: "usd",
     },
   ]
   const redirectToCheckout = async (product) => {
