@@ -4,10 +4,9 @@ export default function Header() {
   return (
     <div className={styles.header}>
       <Link href="/">
-        <div className={styles.headerLink}>Stripe Connect Payments Demo</div>
+        <div className={styles.headerLink}>Range Buddy</div>
       </Link>
       <div>
-        <span className={styles.brandName}>Range Buddy</span>{" "}
         <img className={styles.logo} src="/favicon.ico" />
       </div>
     </div>
