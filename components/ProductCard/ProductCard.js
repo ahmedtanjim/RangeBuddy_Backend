@@ -23,7 +23,7 @@ export default function ProductCard({ product, payForProduct }) {
       <div className="card-body">
         <h5 className="card-title">{product.title}</h5>
         <p className="card-text">
-          {product.amount} {getCurrency(product.currency)} (including shipping)
+          {product.amount} {getCurrency(product.currency)}
         </p>
         <button
           className="btn btn-accent"
