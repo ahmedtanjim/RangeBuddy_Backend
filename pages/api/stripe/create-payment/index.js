@@ -14,7 +14,7 @@ const createPayment = async (req, res) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: amount,
     currency: "usd",
-    application_fee_amount: amount * 0.10,
+    application_fee_amount: Math.floor(amount * 0.10),
   }, {
     stripeAccount: instructor_id,
   })

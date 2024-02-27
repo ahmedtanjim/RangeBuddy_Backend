@@ -13,11 +13,12 @@ const createSubscription = async (req, res) => {
     customer_id,
     instructor_id,
   } = req.query
-  var app_fee = amount * 0.1;
+  const app_fee = amount * 0.1
   const subscription = await stripe.subscriptions.create({
       customer: customer_id,
       items: [{
         price: price_id,
+        quantity: 1
       }],
       payment_behavior: "default_incomplete",
       payment_settings: { save_default_payment_method: "on_subscription" },
