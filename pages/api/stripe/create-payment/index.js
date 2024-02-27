@@ -9,37 +9,9 @@ const appFee = process.env.STRIPE_APP_FEE
 const createPayment = async (req, res) => {
   const {
     amount,
-    customer_id,
     instructor_id,
-    name,
-    email,
   } = req.query
-  /*const createCustomer = await stripe.customers.create(
-    {
-      name: name,
-      email: email
-    },{
-    stripeAccount: instructor_id
-  }
-  )*/
-  const token = await stripe.tokens.create(
-    {
-      customer: customer_id,
-    },
-    {
-      stripeAccount: instructor_id,
-    },
-  )
-  const customer = await stripe.customers.create(
-    {
-      source: token.id,
-    },
-    {
-      stripeAccount: instructor_id,
-    },
-  )
   const paymentIntent = await stripe.payment_intent.create({
-    customer: customer.id,
     amount: amount,
     currency: "usd",
     application_fee_percent: 10,
