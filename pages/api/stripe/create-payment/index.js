@@ -11,7 +11,7 @@ const createPayment = async (req, res) => {
     amount,
     instructor_id,
   } = req.query
-  const paymentIntent = await stripe.payment_intent.create({
+  const paymentIntent = await stripe.paymentIntents.create({
     amount: amount,
     currency: "usd",
     application_fee_percent: 10,
