@@ -15,9 +15,10 @@ const createPayment = async (req, res) => {
     amount: amount,
     currency: "usd",
     application_fee_amount: Math.floor(amount * 0.10),
-  }, {
-    stripeAccount: instructor_id,
-  })
+    transfer_data: {
+      destination: instructor_id,
+    },
+  }, )
 
   res.status(200).json({
     id: paymentIntent.id,
