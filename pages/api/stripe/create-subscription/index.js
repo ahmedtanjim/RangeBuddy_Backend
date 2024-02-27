@@ -21,7 +21,7 @@ const createSubscription = async (req, res) => {
     payment_behavior: 'default_incomplete',
     payment_settings: { save_default_payment_method: 'on_subscription' },
     expand: ['latest_invoice.payment_intent'],
-    application_fee_amount: amount * 0.10,
+    application_fee_percent: 10,
     }, {
       stripeAccount: instructor_id,
     }

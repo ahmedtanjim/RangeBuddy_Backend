@@ -17,7 +17,7 @@ const createPayment = async (req, res) => {
     amount: amount,
     currency: "usd",
     payment_method: "card",
-    application_fee_amount: amount * 0.10,
+    application_fee_percent: 10,
   }, {
     stripeAccount: instructor_id,
   })
