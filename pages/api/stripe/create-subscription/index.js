@@ -22,7 +22,7 @@ const createSubscription = async (req, res) => {
       payment_behavior: "default_incomplete",
       payment_settings: { save_default_payment_method: "on_subscription" },
       expand: ["latest_invoice.payment_intent"],
-      application_fee_amount: Math.round(app_fee),
+      application_fee_amount: Math.floor(app_fee),
     }, {
       stripeAccount: instructor_id,
     },
