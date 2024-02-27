@@ -9,9 +9,11 @@ const appFee = process.env.STRIPE_APP_FEE
 const createPayment = async (req, res) => {
   const {
     amount,
+    customer_id,
     instructor_id,
   } = req.query
   const paymentIntent = await stripe.paymentIntents.create({
+    customer: customer_id,
     amount: amount,
     currency: "usd",
     application_fee_amount: Math.floor(amount * 0.10),
