@@ -12,11 +12,26 @@ const createPayment = async (req, res) => {
     customer_id,
     instructor_id,
   } = req.query
+  const token = await stripe.tokens.create(
+    {
+      customer: customer_id,
+    },
+    {
+      stripeAccount: instructor_id,
+    }
+  );
+  const customer = await stripe.customers.create(
+    {
+      source: token.id,
+    },
+    {
+      stripeAccount: instructor_id,
+    }
+  );
   const paymentIntent = await stripe.payment_intent.create({
-    customer: customer_id,
+    customer: customer.id,
     amount: amount,
     currency: "usd",
-    payment_method: "card",
     application_fee_percent: 10,
   }, {
     stripeAccount: instructor_id,
