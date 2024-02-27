@@ -14,21 +14,23 @@ const createSubscription = async (req, res) => {
     instructor_id,
   } = req.query
   const subscription = await stripe.subscriptions.create({
-    customer: customer_id,
-    items: [{
-      price: price_id,
-    }],
-    payment_behavior: 'default_incomplete',
-    payment_settings: { save_default_payment_method: 'on_subscription' },
-    expand: ['latest_invoice.payment_intent'],
-    application_fee_percent: 10,
+      customer: customer_id,
+      items: [{
+        price: price_id,
+      }],
+      payment_behavior: "default_incomplete",
+      payment_settings: { save_default_payment_method: "on_subscription" },
+      expand: ["latest_invoice.payment_intent"],
+      application_fee_amount: amount * 0.10,
     }, {
       stripeAccount: instructor_id,
-    }
-  );
+    },
+  )
 
-  res.status(200).json({ id: subscription.id,
-    clientSecret: subscription.latest_invoice.payment_intent.client_secret })
+  res.status(200).json({
+    id: subscription.id,
+    clientSecret: subscription.latest_invoice.payment_intent.client_secret,
+  })
 }
 
 export default createSubscription
