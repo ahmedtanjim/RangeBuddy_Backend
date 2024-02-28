@@ -18,14 +18,15 @@ const createSubscription = async (req, res) => {
       customer: customer_id,
       items: [{
         price: price_id,
-        quantity: 1
+        quantity: 1,
       }],
       payment_behavior: "default_incomplete",
       payment_settings: { save_default_payment_method: "on_subscription" },
       expand: ["latest_invoice.payment_intent"],
       application_fee_amount: Math.floor(app_fee),
-    }, {
-      stripeAccount: instructor_id,
+      transfer_data: {
+        destination: instructor_id,
+      },
     },
   )
 
