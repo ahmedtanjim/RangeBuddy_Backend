@@ -13,7 +13,6 @@ const createSubscription = async (req, res) => {
     customer_id,
     instructor_id,
   } = req.query
-  const app_fee = amount * 0.1
   const subscription = await stripe.subscriptions.create({
       customer: customer_id,
       items: [{
@@ -23,7 +22,7 @@ const createSubscription = async (req, res) => {
       payment_behavior: "default_incomplete",
       payment_settings: { save_default_payment_method: "on_subscription" },
       expand: ["latest_invoice.payment_intent"],
-      application_fee_amount: Math.floor(app_fee),
+    application_fee_percent: 10,
       transfer_data: {
         destination: instructor_id,
       },

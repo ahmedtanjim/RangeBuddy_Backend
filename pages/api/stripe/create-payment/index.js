@@ -1,9 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_API_SECRET)
-const host = process.env.NEXT_PUBLIC_HOST
-const appFee = process.env.STRIPE_APP_FEE
 
 /**
- * Generates a checkout session based on the Connected Account Id and other
+ * Generates a checkout session based on the Connected Account ID and other
  * data provided. Handles cases for both the flutter app and the web.
  */
 const createPayment = async (req, res) => {
