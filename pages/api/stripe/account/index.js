@@ -31,7 +31,7 @@ const stripeAccount = async (req, res) => {
     } = req
     console.log(id)
     const deleted = await stripe.accounts.del(id)
-    res.status(200).json({ message: "Account Deleted Successfully", deleted })
+    res.status(200).json({ message: "Account deleted successfully", deleted })
   } else if (method === "POST") {
     // Retrieve the Connected Account for the provided ID
     // I know it shouldn't be a POST call. Don't judge :D I had a lot on my plate

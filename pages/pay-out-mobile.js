@@ -18,7 +18,7 @@ export default function RegisterMobile() {
     if (result) {
       switch (result) {
         case "success":
-          toast.success("Payment completed")
+          toast.success("Payment Completed")
           break
         case "failure":
           toast.error("Payment failed or cancelled")
